@@ -40,7 +40,7 @@ tap.test('https traffic', function (t) {
   );
   t.equal(parsed.timestamp, '2015-05-13T23:39:43.945958Z', 'we have timestamp');
   t.equal(parsed.elb, 'my-loadbalancer', 'we have ELB');
-  t.equal(parsed.client, '192.168.131.39', 'we have client');
+  t.equal(parsed.client, '192.168.131.0', 'we have client');
   t.equal(parsed.client_port, '2817', 'we have client_port');
   t.equal(parsed.backend, '10.0.0.1', 'we have backend');
   t.equal(parsed.backend_port, '80', 'we have backend_port');
