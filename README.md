@@ -4,8 +4,9 @@
 [![Build Status](https://travis-ci.org/toshihirock/node-elb-log-parser.svg?branch=master)](https://travis-ci.org/toshihirock/node-elb-log-parser)
 
 A basic parser for ELB access logs, strongly inspired by node-clf-parser https://github.com/jfhbrook/node-clf-parser.
+The last octet of the IP address is removed due to privacy concerns.
 
-## When I use this npm?
+## When should I use this npm?
 
 + ELB Access Log(S3)->Lambda->ElasticSearch. Example [awslabs/amazon-elasticsearch-lambda-samples](https://github.com/awslabs/amazon-elasticsearch-lambda-samples/blob/master/src/s3_lambda_es.js)
 + Analyze ELB Access Log
@@ -32,7 +33,7 @@ undefined
 > parse('2015-05-13T23:39:43.945958Z my-loadbalancer 192.168.131.39:2817 10.0.0.1:80 0.000086 0.001048 0.001337 200 200 0 57 "GET https://mytest-111.ap-northeast-1.elb.amazonaws.com:443/p/a/t/h?foo=bar&hoge=fuga HTTP/1.1" "curl/7.38.0" DHE-RSA-AES128-SHA TLSv1.2')
 { timestamp: '2015-05-13T23:39:43.945958Z',
   elb: 'my-loadbalancer',
-  client: '192.168.131.39',
+  client: '192.168.131.0',
   client_port: '2817',
   backend: '10.0.0.1',
   request_processing_time: '0.000086',
