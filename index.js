@@ -73,6 +73,13 @@ module.exports = function (line) {
     parsed['backend_port'] = '-1';
   }
 
+  // sanitize IP address to be GDPR compliant 
+  if(parsed.client != -1) {
+    parsed['client'] = parsed.client.substring(0, parsed.client.lastIndexOf('.')).concat('.0');
+  } else {
+    parsed['client'] = '-1';
+  }
+  
   // request
   if(parsed.request != '- - - ') {
     var i = 0;
