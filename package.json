@@ -1,7 +1,7 @@
 {
   "name": "elb-log-parser",
-  "version": "0.0.3",
-  "description": "A basic parser for ELB access logs, strongly inspired by node-clf-parser https://github.com/jfhbrook/node-clf-parser",
+  "version": "0.0.4",
+  "description": "A basic parser for ELB access logs, strongly inspired by node-clf-parser https://github.com/jfhbrook/node-clf-parser. Forked from https://github.com/toshihirock/node-elb-log-parser and added IP address sanitizing.",
   "main": "index.js",
   "bin": {
     "elb-log-parser": "index.js"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:toshihirock/node-elb-log-parser.git"
+    "url": "git@github.com:nodomain/node-elb-log-parser.git"
   },
   "keywords": [
     "elb",
@@ -19,7 +19,7 @@
     "log",
     "parser"
   ],
-  "author": "toshihirock",
+  "author": "nodomain",
   "license": "MIT",
   "devDependencies": {
     "tap": "~0.4.3"
